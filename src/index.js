@@ -51,11 +51,25 @@ axios.get(apiUrl).then(formatWeather);
 
 }
 
+function handleSubmit(event) {
+    event.preventDefault();
+    let inputValue = document.querySelector("#search-field");
+    search(inputValue.value);
+    inputValue.value = "";
+}
+
+
+
+let citySearch = document.querySelector("#city-search");
+citySearch.addEventListener("submit", handleSubmit);
+
 search("London");
 
-let form = document.querySelector("#city-search");
-form.addEventListener("submit", )
-let inputValue = document.querySelector("#search-field");
+
+
+
+
+
 
 
 
