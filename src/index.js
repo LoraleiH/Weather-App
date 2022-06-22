@@ -24,19 +24,22 @@ function formatDate(timestamp) {
 
 
 function formatWeather(response) {
-    console.log(response);
 let cityElement = document.querySelector("#city");
-cityElement.innerHTML = response.data.name;
-let descriptionElement = document.querySelector("#description");
-descriptionElement.innerHTML = response.data.weather[0].description;
 let humidityElement = document.querySelector("#humidity");
-humidityElement.innerHTML = response.data.main.humidity;
 let windspeedElement = document.querySelector("#windspeed");
-windspeedElement.innerHTML = Math.round(response.data.wind.speed);
 let mainTempElement = document.querySelector("#main-temp");
-mainTempElement.innerHTML = Math.round(response.data.main.temp);
 let bigImageElement = document.querySelector("#big-image");
+let descriptionElement = document.querySelector("#description");
 let icon = response.data.weather[0].icon;
+
+celsiusTemperature = response.data.main.temp;
+
+cityElement.innerHTML = response.data.name;
+descriptionElement.innerHTML = response.data.weather[0].description;
+humidityElement.innerHTML = response.data.main.humidity;
+windspeedElement.innerHTML = Math.round(response.data.wind.speed);
+mainTempElement.innerHTML = Math.round(celsiusTemperature);
+
 bigImageElement.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
 
 
@@ -59,16 +62,38 @@ function handleSubmit(event) {
 }
 
 
+function displayFar(event) {
+    event.preventDefault();
+    celConvert.classList.remove("active");
+    farConvert.classList.add("active");
+    let temperature = document.querySelector("#main-temp");
+    let farTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
+    temperature.innerHTML = farTemp;
+}
+
+function displayCel(event) {
+    event.preventDefault();
+    farConvert.classList.remove("active");
+    celConvert.classList.add("active");
+    let temperature = document.querySelector("#main-temp");
+    temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+
+
+let celsiusTemperature = null;
 
 let citySearch = document.querySelector("#city-search");
 citySearch.addEventListener("submit", handleSubmit);
 
+let farConvert = document.querySelector("#far-convert");
+farConvert.addEventListener("click", displayFar);
+
+let celConvert = document.querySelector("#cel-convert");
+celConvert.addEventListener("click", displayCel);
+
+
 search("London");
-
-
-
-
-
 
 
 

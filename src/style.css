@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -35,6 +39,19 @@ ul {
 }
 
 
+.active {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    
+}
+
+.active:hover {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    
+}
 
 .big-temp {
     text-align: center;
@@ -54,12 +71,12 @@ ul {
     margin: 0;
 }
 
-
 .card {
     max-width: 600px;
     margin: 0 auto;
     top: 20px;
 }
+
 
 .col.main-forecast {
 margin-top: 0px;
