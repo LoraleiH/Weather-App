@@ -1,3 +1,95 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.big-image {
+    font-size: 65px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.big-temp {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    margin: 0;
+}
+
+.btn-secondary {
+    margin: 0;
+}
+
+.btn-primary {
+    margin: 0;
+}
+.card {
+    max-width: 600px;
+    margin: 0 auto;
+    top: 20px;
+}
+
+.col.main-forecast {
+margin: 40px;
+
+}
+
+
+.credit {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+
+.forecast-icon {
+    font-size: 30px;
+    margin: 5px;
+}
+
+
+.low {
+    color: #808080;
+}
+
+
+.search-form {
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+.week-forecast {
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
