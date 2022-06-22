@@ -35,6 +35,11 @@ let windspeedElement = document.querySelector("#windspeed");
 windspeedElement.innerHTML = Math.round(response.data.wind.speed);
 let mainTempElement = document.querySelector("#main-temp");
 mainTempElement.innerHTML = Math.round(response.data.main.temp);
+let bigImageElement = document.querySelector("#big-image");
+let icon = response.data.weather[0].icon;
+bigImageElement.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
+
+
 formatDate(response.data.dt * 1000);
 
 }

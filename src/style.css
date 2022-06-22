@@ -10,7 +10,12 @@ form {
 h1 {
     margin: 0;
     margin-bottom: 10px;
-    font-size: 50px;
+    font-size: 40px;
+}
+
+img {
+    margin: 0 auto;
+    display: block;
 }
 
 li.description {
@@ -27,12 +32,7 @@ ul {
 
 }
 
-.big-image {
-    font-size: 65px;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
+
 
 .big-temp {
     text-align: center;
@@ -88,7 +88,9 @@ margin: 40px;
     margin: 0 auto;
 }
 
-
+.weather-icon {
+    margin: 0 auto;
+}
 
 
 .week-forecast {
