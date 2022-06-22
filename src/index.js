@@ -1,7 +1,42 @@
+function formatDate(timestamp) {
+
+
+    let now = new Date(timestamp);
+    let mins = now.getMinutes();
+    if (mins < 10) { 
+       mins = `0${mins}`; 
+    }
+    let hours = now.getHours();
+    if (hours < 10) {
+        hours = `0${hours}`;
+    }
+
+    let time = `${hours}:${mins}`
+
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+    let day = days[now.getDay()];
+
+    let dayTime = document.querySelector("#day-time");
+    dayTime.innerHTML = `${day} ${time}`;
+}
+
+
 function formatWeather(response) {
     console.log(response);
+let cityElement = document.querySelector("#city");
+cityElement.innerHTML = response.data.name;
+let descriptionElement = document.querySelector("#description");
+descriptionElement.innerHTML = response.data.weather[0].description;
+let humidityElement = document.querySelector("#humidity");
+humidityElement.innerHTML = response.data.main.humidity;
+let windspeedElement = document.querySelector("#windspeed");
+windspeedElement.innerHTML = Math.round(response.data.wind.speed);
+let mainTempElement = document.querySelector("#main-temp");
+mainTempElement.innerHTML = Math.round(response.data.main.temp);
+formatDate(response.data.dt * 1000);
 
-    
 }
 
 
