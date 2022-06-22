@@ -15,37 +15,43 @@
     <title>Weather App</title>
 </head>
 <body>
+
     <div class="container">
-<div class="card">
+
+        <div class="card">
 
 
 <div class="search-form">
-    <form>
-<div class="row">
-    <div class="col-auto">
+
+
+    <form id="city-search">
+<div class="row search-bar align-items-center">
+    <div class="col-6">
 <input 
-type="text" 
+type="search" 
 class="form-control" 
 id="search-field" 
 placeholder="Enter city here..."/>
 </div>
 
-<div class="col-auto">
+<div class="col-2">
 
 <input 
 type="submit" 
 class="btn btn-secondary" 
 id="submit-button"
 value="Search">
-
+</div>
+<div class="col-3">
     <input 
     type="submit" 
     class="btn btn-primary" 
     id="submit-current-button"
     value="Current Location">
 </div>
-</form>
+
 </div>
+</form>
 </div>
 
 <h1 id="city"></h1>

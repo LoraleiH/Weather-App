@@ -44,11 +44,18 @@ formatDate(response.data.dt * 1000);
 
 }
 
-
-let apiKey="b2d81bf38bb41052988aedac8aa89c4f";
-let city="San Fransisco";
-let apiUrl =
-`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-
+function search(city) {
+let apiKey = "b2d81bf38bb41052988aedac8aa89c4f";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(formatWeather);
+
+}
+
+search("London");
+
+let form = document.querySelector("#city-search");
+form.addEventListener("submit", )
+let inputValue = document.querySelector("#search-field");
+
+
+
