@@ -46,7 +46,7 @@ formatDate(response.data.dt * 1000);
 
 
 let apiKey="b2d81bf38bb41052988aedac8aa89c4f";
-let city="London";
+let city="San Fransisco";
 let apiUrl =
 `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
