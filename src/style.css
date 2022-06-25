@@ -78,6 +78,10 @@ ul {
     top: 20px;
 }
 
+.city-search {
+    display: block;
+    margin: 0 auto;
+}
 
 .col.main-forecast {
 margin-top: 0px;
@@ -85,20 +89,25 @@ margin-left: 40px;
 margin-bottom: 40px;
 
 }
+
 .col-2 {
     margin: 0 auto;
-    padding: 0px;
+    padding: 0;
 }
+
 .col-3 {
     margin: 0 auto;
-    padding: 0px;
+    padding: 0;
 }
 .col-6 {
     margin: 0 auto;
-    padding: 0px;
+    padding: 0;
 }
 
-
+.col-auto {
+    margin-right: 5px;
+    padding: 0px;
+}
 
 .credit {
     margin: 0 auto;
@@ -133,7 +142,8 @@ margin-bottom: 40px;
 
 .row.search-bar {
     margin: 0;
-    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-field {
@@ -141,8 +151,7 @@ margin-bottom: 40px;
 }
 
 .search-form {
-    padding: 0px;
-    display: block;
+    padding: 10px;
     margin: 0;
 }
 

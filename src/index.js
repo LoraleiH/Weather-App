@@ -64,35 +64,26 @@ function handleSubmit(event) {
 function displayForecast() {
 
     let forecastElement = document.querySelector("#week-forecast");
-  
-
-    let forecastHTML = `<div class="row align-items-center">`;
-
-    forecastHTML = forecastHTML + `<div class="col">
-     <div class="forecast-day">Mon</div>
-     <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-        <div><span class="high">15°</span> <span class="low">9°</span></div>
-
-        </div>`;
- 
-        forecastHTML =
-          forecastHTML +
-          `<div class="col">
-   <div class="forecast-day">Mon</div>
+    let forecastHTML = `<div class="row">`;
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    days.forEach(function (day) {
+        forecastHTML = forecastHTML + `<div class="col">
+     <div class="forecast-day">${day}</div>
      <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
         <div><span class="high">15°</span> <span class="low">9°</span></div>
 
         </div>`;
 
-      
 
+        
 
+    })
 
+    forecastHTML = forecastHTML + `</div>`;
+
+    forecastElement.innerHTML = forecastHTML;
 
     
-      forecastElement.innerHTML = forecastHTML;
-
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 }
 
