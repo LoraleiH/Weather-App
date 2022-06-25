@@ -1,6 +1,5 @@
 function formatDate(timestamp) {
 
-
     let now = new Date(timestamp);
     let mins = now.getMinutes();
     if (mins < 10) { 
@@ -24,6 +23,7 @@ function formatDate(timestamp) {
 
 
 function formatWeather(response) {
+    console.log(response);
 let cityElement = document.querySelector("#city");
 let humidityElement = document.querySelector("#humidity");
 let windspeedElement = document.querySelector("#windspeed");
@@ -44,13 +44,13 @@ bigImageElement.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x
 
 
 formatDate(response.data.dt * 1000);
-getForecast(response.data.coord)
+getForecast(response.data.coord);
 
 }
 
 function search(city) {
 let apiKey = "b2d81bf38bb41052988aedac8aa89c4f";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(formatWeather);
 
 }
@@ -112,22 +112,24 @@ function displayForecast(response) {
 }
 
 
-function displayFar(event) {
-    event.preventDefault();
-    celConvert.classList.remove("active");
-    farConvert.classList.add("active");
-    let temperature = document.querySelector("#main-temp");
-    let farTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
-    temperature.innerHTML = farTemp;
+function toggleUnitsCel(event) {
+        event.preventDefault();
+       farConvert.classList.remove("active");
+       celConvert.classList.add("active");
+      let temperature = document.querySelector("#main-temp");
+      temperature.innerHTML = Math.round(celsiusTemperature);
+
 }
 
-function displayCel(event) {
-    event.preventDefault();
-    farConvert.classList.remove("active");
-    celConvert.classList.add("active");
-    let temperature = document.querySelector("#main-temp");
-    temperature.innerHTML = Math.round(celsiusTemperature);
+function toggleUnitsFar(event) {
+     event.preventDefault();
+      celConvert.classList.remove("active");
+      farConvert.classList.add("active");
+     let temperature = document.querySelector("#main-temp");
+     let farTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
+     temperature.innerHTML = farTemp;
 }
+
 
 function currentPosition(event) {
 event.preventDefault();
@@ -139,21 +141,20 @@ function currentLocation(position) {
 let lat = position.coords.latitude;
 let lon = position.coords.longitude;
 let apiKey = "b2d81bf38bb41052988aedac8aa89c4f";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(formatWeather);
 }
 
 
 
 function getForecast(coordinates) {
-    console.log(coordinates);
     let apiKey = "b2d81bf38bb41052988aedac8aa89c4f";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayForecast);
 
 }
 
-
+let units = "metric";
 
 
 let celsiusTemperature = null;
@@ -162,10 +163,10 @@ let citySearch = document.querySelector("#city-search");
 citySearch.addEventListener("submit", handleSubmit);
 
 let farConvert = document.querySelector("#far-convert");
-farConvert.addEventListener("click", displayFar);
+farConvert.addEventListener("click", toggleUnitsFar);
 
 let celConvert = document.querySelector("#cel-convert");
-celConvert.addEventListener("click", displayCel);
+celConvert.addEventListener("click", toggleUnitsCel);
 
 let currentLoc = document.querySelector("#submit-current-button")
 currentLoc.addEventListener("click", currentPosition);

@@ -1,5 +1,10 @@
 a {
     text-decoration: none;
+    color: #EC6E4B;
+}
+
+a:hover {
+    color: #ae3817;
 }
 
 body {
@@ -13,10 +18,14 @@ form {
 
 h1 {
     margin-left: 40px;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 0px;
     font-size: 40px;
     padding: 0;
+}
+
+hr {
+    margin: 0;
 }
 
 img {
@@ -69,7 +78,13 @@ ul {
 }
 
 .btn-primary {
-    margin: 0;
+    width: 100%;
+    background: #EC6E4B;
+    border: #EC6E4B;
+}
+
+.btn-primary:hover {
+    background: #ae3817;
 }
 
 .card {
