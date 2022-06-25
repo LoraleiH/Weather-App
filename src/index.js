@@ -44,6 +44,7 @@ bigImageElement.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x
 
 
 formatDate(response.data.dt * 1000);
+getForecast(response.data.coord)
 
 }
 
@@ -61,16 +62,38 @@ function handleSubmit(event) {
     inputValue.value = "";
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+let date = new Date(timestamp * 1000);
 
+
+
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+let day = days[date.getDay()];
+
+return day;
+
+}
+
+function displayForecast(response) {
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector("#week-forecast");
     let forecastHTML = `<div class="row">`;
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    days.forEach(function (day) {
-        forecastHTML = forecastHTML + `<div class="col">
-     <div class="forecast-day">${day}</div>
-     <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-        <div><span class="high">15°</span> <span class="low">9°</span></div>
+    forecast.forEach(function (forecastDay) {
+        forecastHTML =
+          forecastHTML +
+          `<div class="col" id="forecast-col">
+     <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
+   <img class="forecast-icon" src="http://openweathermap.org/img/wn/${
+       forecastDay.weather[0].icon
+     }@2x.png" />
+
+        <div><span class="high">
+       ${Math.round(
+         forecastDay.temp.max
+       )}°</span> <span class="low">${Math.round(
+            forecastDay.temp.min
+          )}°</span></div>
 
         </div>`;
 
@@ -120,6 +143,18 @@ axios.get(apiUrl).then(formatWeather);
 }
 
 
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = "b2d81bf38bb41052988aedac8aa89c4f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+
+}
+
+
+
+
 let celsiusTemperature = null;
 
 let citySearch = document.querySelector("#city-search");
@@ -137,6 +172,7 @@ currentLoc.addEventListener("click", currentPosition);
 
 
 search("London");
+
 displayForecast();
 
 
