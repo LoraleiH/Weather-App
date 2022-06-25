@@ -77,15 +77,30 @@ ul {
     width: 100%;
 }
 
-.btn-primary {
+
+.btn-warning {
     width: 100%;
     background: #EC6E4B;
     border: #EC6E4B;
+    color: #fff;
+    
 }
 
-.btn-primary:hover {
-    background: #ae3817;
+.btn-warning:focus {
+    background: #EC6E4B;
+    color: #fff;
+    
 }
+
+.btn-warning:hover {
+    background: #ae3817;
+    color: #fff;
+}
+
+
+
+
+
 
 .card {
     max-width: 600px;
