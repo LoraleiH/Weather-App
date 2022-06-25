@@ -53,6 +53,7 @@ ul {
     
 }
 
+
 .big-temp {
     text-align: center;
     padding: 0;
@@ -104,28 +105,45 @@ margin-bottom: 40px;
     text-align: center;
     font-size: 10px;
     font-family:'Courier New', Courier, monospace;
+    color: black;
 }
 
+.forecast-col {
+    display: inline;
+    text-align: center;
+}
+
+.forecast-details {
+    position: relative;
+    top: 25px;
+}
 
 .forecast-icon {
     font-size: 30px;
     margin: 5px;
 }
 
+.forecast-week {
+    text-align: center;
+}
 
 .low {
     color: #808080;
 }
 
 .row.search-bar {
-    margin: 0 auto;
-    padding: 10px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.search-field {
+    display: inline;
 }
 
 .search-form {
     padding: 0px;
     display: block;
-    margin: 10 auto;
+    margin: 0;
 }
 
 .weather-icon {

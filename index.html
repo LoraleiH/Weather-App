@@ -25,7 +25,7 @@
 
 
     <form id="city-search">
-<div class="row search-bar align-items-center">
+<div class="row search-bar">
     <div class="col-6">
 <input 
 type="search" 
@@ -43,23 +43,24 @@ id="submit-button"
 value="Search">
 </div>
 </form>
-<div class="col-3">
+<div class="col-auto">
     <input 
     type="submit" 
     class="btn btn-primary" 
     id="submit-current-button"
     value="Current Location">
 </div>
-
 </div>
 
 </div>
+
+
 
 <h1 id="city"></h1>
-<div class="row align-items-center">
+<div class="row">
     <div class="col main-forecast ">
 
-<ul>
+<ul class="forecast-details">
 <li>
     <span id="day-time"></span>
 </li>
@@ -80,65 +81,17 @@ value="Search">
     <a href="#" class="active" id="cel-convert">°C</a> | 
     <a href="#" id="far-convert">°F</a></div>
 
-</div>
+</div> </div>
 
-<div class="week-forecast">
-<div class="row">
- <div class="col">
-  <div class="forecast-day">Mon</div>
-    <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-<div><span class="high">15°</span> <span class="low">9°</span></div>
+<div class="forecast-week" id="week-forecast"></div>
 
-</div>
- <div class="col">
-    <div class="forecast-day">Mon</div>
-    <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-<div><span class="high">15°</span> <span class="low">9°</span></div>
 
-</div>
-  <div class="col">
-    <div class="forecast-day">Mon</div>
-    <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-    <div><span class="high">15°</span> <span class="low">9°</span></div>
-
-</div>
-   <div class="col">
-    <div class="forecast-day">Mon</div>
-   <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-   <div><span class="high">15°</span> <span class="low">9°</span></div>
-
-</div>
-    <div class="col">
-        <div class="forecast-day">Mon</div>
-        <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-        <div><span class="high">15°</span> <span class="low">9°</span></div>
-
-    </div>
-     <div class="col">
-        <div class="forecast-day">Mon</div>
-        <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-        <div><span class="high">15°</span> <span class="low">9°</span></div>
-
-    </div>
-      <div class="col">
-        <div class="forecast-day">Mon</div>
-        <div class="forecast-icon"><i class="fa-solid fa-cloud"></i></div>
-        <div><span class="high">15°</span> <span class="low">9°</span></div>
-
-    </div>
 </div>
 </div>
 
-  </div>
-</div>
+<br />
 
-</div>
-
-
-<div class="credit"><a href="https://github.com/LoraleiH/Weather-App">Open Source Code</a> by Loralei Heathcote</div>
-
-
-    </div>
+  <div class="credit"><a href="https://github.com/LoraleiH/Weather-App">Open Source Code</a> by Loralei Heathcote</div>
 
 
 
